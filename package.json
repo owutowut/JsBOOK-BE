@@ -1,7 +1,7 @@
 {
   "name": "jsbook-be",
   "version": "1.0.0",
-  "description": "",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +16,13 @@
     "express": "^4.17.2",
     "mongoose": "^6.2.1",
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/owutnr/jsbook-be.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/owutnr/jsbook-be/issues"
+  },
+  "homepage": "https://gitlab.com/owutnr/jsbook-be#readme"
 }
