@@ -6,7 +6,7 @@ module.exports = app => {
     .get(bookBuilder.list_all_books)
     .post(bookBuilder.create_a_book);
   app
-    .route('/books/:bookId')
+    .route('/books/:_id')
     .get(bookBuilder.read_a_book)
     .put(bookBuilder.update_a_book)
     .delete(bookBuilder.delete_a_book);
