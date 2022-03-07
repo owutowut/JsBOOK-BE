@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 global.Book = require('./api/models/bookModels');
 
 const routes = require('./api/routes/bookRoutes');
+const usersroutes = require('./api/routes/userRoutes');
 
 mongoose.connect(
   'mongodb://localhost:27017/JsBook',
@@ -21,7 +22,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 routes(app);
+usersroutes(app);
 app.listen(port);
+
 
 app.use((req, res) => {
   res.status(404).send({ url: `${req.originalUrl} not found` });
