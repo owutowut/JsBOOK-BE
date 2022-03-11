@@ -37,7 +37,7 @@ const bookSchema = new Schema(
         },
         img: {
             type: String,
-            required: true
+            required: false
           },
     },
     { collection: 'books' }
