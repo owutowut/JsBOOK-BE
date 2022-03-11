@@ -6,8 +6,12 @@ module.exports = app => {
     .get(userBuilder.list_all_users)
     .post(userBuilder.create_a_user);
   app
+    .get('/profile',userBuilder.profile)
+    
+  app
         .route('/login')
         .post(userBuilder.login)
+
 //     .route('/books/:_id')
 //     .get(bookBuilder.read_a_book)
 //     .put(bookBuilder.update_a_book)

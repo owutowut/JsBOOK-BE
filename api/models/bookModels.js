@@ -35,10 +35,6 @@ const bookSchema = new Schema(
             type: String,
             required: true
         },
-        img: {
-            type: String,
-            required: false
-          },
     },
     { collection: 'books' }
 );

@@ -44,6 +44,19 @@ exports.login = async (req, res) => {
   }
 };
 
+exports.profile = async (req, res) => {
+  const authorization=req.headers.authorization
+  if(!authorization) {
+    res.send('not have token')
+  }
+  else{
+    const token=authorization.split(' ')[1]
+    const data=jwt.verify(token,'shhh')
+    const user=await User.findById(data.id)
+    res.send(user)
+  }
+}
+
 
 // router.delete('/:id', async function (req, res) {
 //   const id = req.params.id

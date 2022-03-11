@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const book = mongoose.model('book');
+const mongoose = require("mongoose");
+const book = mongoose.model("book");
 
 exports.list_all_books = (req, res) => {
   book.find({}, (err, books) => {
@@ -21,7 +21,7 @@ exports.read_a_book = (req, res) => {
     if (err) res.send(err);
     res.json(book);
   });
-};  
+};
 
 exports.update_a_book = (req, res) => {
   book.findOneAndUpdate(
@@ -36,11 +36,13 @@ exports.update_a_book = (req, res) => {
 };
 
 exports.delete_a_book = (req, res) => {
-  book.deleteOne({ _id: req.params._id }, err => {
+  book.deleteOne({ _id: req.params._id }, (err) => {
     if (err) res.send(err);
-    res.json({
-      message: 'book successfully deleted',
-     _id: req.params._id
-    });
+    else {
+      res.json({
+        message: "book successfully deleted",
+        _id: req.params._id,
+      });
+    }
   });
 };
