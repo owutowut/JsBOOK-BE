@@ -8,6 +8,7 @@ const router = express.Router()
 exports.list_all_users = (req, res) => {
   User.find({}, (err, users) => {
     if (err) res.send(err);
+    console.log(users)
     res.json(users);
   });
 };
@@ -58,14 +59,27 @@ exports.profile = async (req, res) => {
 }
 
 
-// router.delete('/:id', async function (req, res) {
-//   const id = req.params.id
-//   await User.deleteOne({
-//     _id: id,
-//   })
-//   res.send('delete complete')
-// })
+exports.delete = async (req, res)  => {
+  const id = req.params.id
+  await User.deleteOne({
+    _id: id,
+  })
+  res.send('delete complete')
+}
 
+
+exports.updateprofile = async (req, res) => {
+  const authorization=req.headers.authorization
+  if(!authorization) {
+    res.send('not have token')
+  }
+  else{
+    const token=authorization.split(' ')[1]
+    const data=jwt.verify(token,'shhh')
+    const user=await User.updateOne({_id:data.id},{$set:req.body})
+    res.send(user)
+  }
+}
 // router.patch('/:id', async function (req, res) {
 //   const id = req.params.id
 //   const body = req.body

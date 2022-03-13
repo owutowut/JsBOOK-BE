@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const User = new mongoose.Schema({
   img: {
     type: String,
+    default: 'https://cdn-icons-png.flaticon.com/512/236/236831.png',
   },
   firstname: {
     type: String,
@@ -25,6 +26,7 @@ const User = new mongoose.Schema({
   },
   createDate: {
     type: String,
+    default:()=>new Date(),
   },
 })
 

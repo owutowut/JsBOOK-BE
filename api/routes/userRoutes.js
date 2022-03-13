@@ -7,6 +7,10 @@ module.exports = app => {
     .post(userBuilder.create_a_user);
   app
     .get('/profile',userBuilder.profile)
+    .patch('/updateprofile',userBuilder.updateprofile)
+
+  app
+    .delete('/user/:id',userBuilder.delete)
     
   app
         .route('/login')
