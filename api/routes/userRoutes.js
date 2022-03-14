@@ -11,6 +11,7 @@ module.exports = app => {
 
   app
     .delete('/user/:id',userBuilder.delete)
+    .get('/user/:_id',userBuilder.read_a_user)
     
   app
         .route('/login')

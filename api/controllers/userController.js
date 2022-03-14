@@ -13,6 +13,14 @@ exports.list_all_users = (req, res) => {
   });
 };
 
+exports.read_a_user = (req, res) => {
+  User.findById(req.params._id, (err, user) => {
+    console.log(user)
+    if (err) res.send(err);
+    res.json(user);
+  });
+};
+
 exports.create_a_user = async (req, res) => {
   const user = await User.findOne().where({ email: req.body.email })
   const body = req.body
