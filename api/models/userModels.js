@@ -22,11 +22,11 @@ const User = new mongoose.Schema({
   },
   role: {
     type: String,
-    default: 'user',
+    default: 'member',
   },
   createDate: {
     type: String,
-    default:()=>new Date(),
+    default:()=>new Date,
   },
 })
 
