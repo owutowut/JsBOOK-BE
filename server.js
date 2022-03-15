@@ -4,9 +4,11 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 global.Book = require('./api/models/bookModels');
+global.Loan = require('./api/models/loanModels');
 
 const routes = require('./api/routes/bookRoutes');
 const usersroutes = require('./api/routes/userRoutes');
+const loanroutes = require('./api/routes/loanRoutes');
 
 mongoose.connect(
   'mongodb://localhost:27017/JsBook',
@@ -23,6 +25,7 @@ app.use(bodyParser.json());
 
 routes(app);
 usersroutes(app);
+loanroutes(app);
 app.listen(port);
 
 

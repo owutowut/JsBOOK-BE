@@ -7,13 +7,9 @@ const loanSchema = new Schema(
             type: String,
             required: true
         },
-        email: {
+        IDcard: {
             type: String,
             required: true
-        },
-        cover: {
-            type: String,
-            required: false
         },
         IsDate: {
             type: String,
