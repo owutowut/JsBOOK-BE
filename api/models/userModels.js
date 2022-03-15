@@ -14,6 +14,9 @@ const User = new mongoose.Schema({
   email: {
     type: String,
   },
+  IDcard: {
+    type: String,
+  },
   tel: {
     type: String,
   },
