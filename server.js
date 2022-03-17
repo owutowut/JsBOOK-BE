@@ -10,12 +10,31 @@ const routes = require('./api/routes/bookRoutes');
 const usersroutes = require('./api/routes/userRoutes');
 const loanroutes = require('./api/routes/loanRoutes');
 
+const User = require('./api/models/userModels');
+
+const usercontroller = require('./api/controllers/userController');
+
 mongoose.connect(
   'mongodb://localhost:27017/JsBook',
   { useNewUrlParser: true }
 );
 const port = process.env.PORT || 8080;
 const app = express();
+
+// var adminacc = {
+//   img: "https://cdn-icons-png.flaticon.com/512/236/236831.png",
+//   firstname: "Admin",
+//   lastname: "Accout",
+//   role: "librarian",
+//   email: "admin",
+//   password: "admin",
+//   IDcard: "0000000000000",
+//   createDate: "00/00/00",
+//   tel: "000000000",
+// }
+
+// User.create(adminacc)
+
 app.use(cors());
 // tells the system whether you want to use a simple algorithm for shallow parsing (i.e. false) 
 // or complex algorithm for deep parsing that can deal with nested objects (i.e. true).

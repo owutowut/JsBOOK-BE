@@ -3,7 +3,11 @@ const { Schema } = mongoose;
 
 const loanSchema = new Schema(
     {
-        bname: {
+        bid: {
+            type: String,
+            required: true
+        },
+        lname:{
             type: String,
             required: true
         },
@@ -21,9 +25,10 @@ const loanSchema = new Schema(
         },
         ReDate: {
             type: String,
-            required: false
+            required: false,
+            default: '--------'
         },
-        status: {
+        lstatus: {
             type: String,
             required: true
         },
