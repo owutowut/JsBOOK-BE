@@ -75,6 +75,17 @@ exports.delete = async (req, res)  => {
   res.send('delete complete')
 }
 
+exports.update_a_user = (req, res) => {
+  User.findOneAndUpdate(
+    { _id: req.params._id },
+    req.body,
+    { new: true },
+    (err, User) => {
+      if (err) res.send(err);
+      res.json(User);
+    }
+  );
+};
 
 exports.updateprofile = async (req, res) => {
   const authorization=req.headers.authorization
