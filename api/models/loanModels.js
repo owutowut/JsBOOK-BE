@@ -11,6 +11,10 @@ const loanSchema = new Schema(
             type: String,
             required: true
         },
+        fname:{
+            type: String,
+            required: true
+        },
         IDcard: {
             type: String,
             required: true
